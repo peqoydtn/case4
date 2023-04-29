@@ -1,3 +1,6 @@
-abobik3:
-  cmd.run:
-    - name: cd /tmp/nginx && ./configure && make && sudo make install
+index_html_replace:
+    file.replace:
+        - name: /tmp/nginx/nginx-1.24.0/html/index.html
+        - pattern: 'Welcome to nginx!'
+        - repl: 'Hello Greenatom'
+        - backup: '.bak'
